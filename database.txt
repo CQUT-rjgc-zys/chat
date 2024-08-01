@@ -1,0 +1,40 @@
+create table friend_requests
+(
+    id        int auto_increment
+        primary key,
+    sender    int      not null,
+    receiver  int      not null,
+    send_time datetime not null,
+    status    int      not null
+);
+
+create table friendships
+(
+    id          int auto_increment
+        primary key,
+    mainID      int not null,
+    secondaryID int not null
+)
+    row_format = DYNAMIC;
+
+create table messages
+(
+    id         int auto_increment
+        primary key,
+    senderID   int                                not null,
+    receiverID int                                not null,
+    content    text                               not null,
+    sendTime   datetime default CURRENT_TIMESTAMP not null
+)
+    row_format = DYNAMIC;
+
+create table users
+(
+    id           int auto_increment
+        primary key,
+    username     varchar(10)  not null,
+    password     varchar(255) not null,
+    headPortrait int          not null comment '头像',
+    status       tinyint      not null comment '在线状态'
+)
+    row_format = DYNAMIC;

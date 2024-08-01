@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户登录</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+</head>
+<body style="background: url('/images/background.png'); background-size: cover;">
+<div class="container">
+    <div class="form-container" id="loginContainer">
+        <h2>登陆</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="text" placeholder="用户名" name="username" id="username" required>
+                <span class="tooltip" id="usernameTooltip"></span> <!-- 用户名提示框 -->
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="密码" name="password" id="password" required>
+                <span class="tooltip" id="passwordTooltip"></span> <!-- 密码提示框 -->
+            </div>
+            <div class="input-group">
+                <input type="submit" value="登陆">
+            </div>
+        </form>
+        <div class="switch-form">
+            还没有账号？<a href="#" id="switchToRegister">注册</a>
+        </div>
+    </div>
+
+    <div class="form-container" id="registerContainer" style="display: none;">
+        <h2>注册</h2>
+        <form id="registrationForm">
+            <div class="input-group">
+                <input type="text" placeholder="用户名" name="username" id="registerUsername" required>
+                <span class="tooltip" id="registerUsernameTooltip"></span> <!-- 注册用户名提示框 -->
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="密码" name="password" id="registerPassword" required>
+                <span class="tooltip" id="registerPasswordTooltip"></span> <!-- 注册密码提示框 -->
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="确认密码" name="confirmPassword" id="confirmPassword" required>
+                <span class="tooltip" id="confirmPasswordTooltip"></span> <!-- 确认密码提示框 -->
+            </div>
+            <div class="input-group">
+                <input type="submit" value="注册">
+            </div>
+        </form>
+        <div class="switch-form">
+            已有账号？<a href="#" id="switchToLogin">登陆</a>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="/js/index.js"></script>
+</html>

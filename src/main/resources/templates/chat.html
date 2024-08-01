@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天</title>
+    <link rel="stylesheet" type="text/css" href="/css/chat.css">
+</head>
+<body>
+<div id="message-popup">
+    <img src="" alt="message-icon" id="message-popup-icon">
+    <div id="message-popup-content">
+        收到一条消息通知
+    </div>
+</div>
+<div id="sidebar">
+    <div id="user-info">
+        <div id="current-user">
+            <img src="/images/photos/defaultPhoto.png" alt="User Avatar" id="avatar">
+            <div id="username"></div>
+        </div>
+        <div id="online-friends">在线好友人数：<span id="online-count"></span></div>
+    </div>
+    <div id="friend-list-container">
+        <ul id="friend-list-ul">
+        </ul>
+    </div>
+    <div id="left-footer">
+        <button id="search-button" onclick="openDialog('search')">查找用户</button>
+        <button id="apply-button" onclick="openDialog('apply')">好友申请</button>
+        <img src="/images/message.png" alt="message-icon" id="message-icon" onclick="openDialog('message')">
+    </div>
+</div>
+<div id="chat" style="display: none">
+    <div id="chat-header" >
+        <img src="/images/back.png" alt="back-image" id="backImage">
+        <div id="chat-with-user"></div>
+    </div>
+    <div id="message-container">
+        <ul id="chat-message-list-ul">
+            <!-- 展示聊天记录 -->
+        </ul>
+    </div>
+    <hr id="chat-line">
+    <div id="input-container">
+        <textarea id="message-input"></textarea>
+        <button id="send-button" onclick="sendMessage()">发送</button>
+    </div>
+</div>
+
+<!-- 查找用户 -->
+<div id="search-overlay" style="display: none;"></div>
+<div id="search-dialog" style="display: none;">
+    <div id="search-dialog-header">
+        <div id="search-dialog-title">查找用户</div>
+        <div id="search-dialog-close" onclick="closeDialog('search')">×</div>
+    </div>
+    <hr style="border: 2px solid #ddd;">
+    <div id="search-dialog-input">
+        <input type="text" id="search-input" placeholder="请输入用户账号" autocomplete="off">
+        <button id="searchInFriends-dialog-button" onclick="confirmSearchInFriends()">查找好友</button>
+        <button id="searchInUsers-dialog-button" onclick="confirmSearchInUsers()">查找其他用户</button>
+    </div>
+    <br>
+    <div id="searchUser-list-container">
+        <ul id="searchUser-list-ul">
+            <!-- 展示查找出来的用户信息 -->
+        </ul>
+    </div>
+</div>
+
+<!-- 好友申请 -->
+<div id="apply-overlay" style="display: none;"></div>
+<div id="apply-dialog" style="display: none;">
+    <div id="apply-dialog-header">
+        <div id="apply-dialog-title">好友申请</div>
+        <div id="apply-dialog-close" onclick="closeDialog('apply')">×</div>
+    </div>
+    <hr style="border: 2px solid #ddd;">
+    <div id="applyInfo-list-container">
+        <div class="apply-message" id="apply-message-send">
+            <h4 id="apply-message-send-title"></h4>
+            <div id="apply-message-send-div">
+                <ul class="applyInfo-list-ul" id="applyInfo-list-ul-send">
+                    <!-- 展示我收到的好友申请信息 -->
+                </ul>
+            </div>
+        </div>
+        <hr style="border: 1px solid #ddd;">
+        <div class="apply-message" id="apply-message-receive">
+            <h4 id="apply-message-receive-title"></h4>
+            <div id="apply-message-receive-div">
+                <ul class="applyInfo-list-ul" id="applyInfo-list-ul-receive">
+                    <!-- 展示我发送的好友申请信息 -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 通知 -->
+<div id="message-overlay" style="display: none;"></div>
+<div id="message-dialog" style="display: none;">
+    <div id="message-dialog-header">
+        <div id="message-dialog-title">通知消息</div>
+        <div id="message-dialog-close" onclick="closeDialog('message')">×</div>
+    </div>
+    <hr style="border: 2px solid #ddd;">
+    <div id="message-list-container">
+        <ul id="message-list-ul">
+            <!-- 展示我发送的好友申请信息 -->
+        </ul>
+    </div>
+</div>
+<script src="/js/chat.js"></script>
+</body>
+</html>
