@@ -13,8 +13,8 @@ public enum ErrorCode {
     String message;
 
     ErrorCode(int code, String message) {
-        this.code = code; // 使用 this 关键字初始化字段
-        this.message = message; // 使用 this 关键字初始化字段
+        this.code = code;
+        this.message = message;
     }
 
     public int getCode() {
