@@ -780,7 +780,7 @@ function displayReceiveApplyInfosResults(applyInfos) {
     document.getElementById('apply-message-receive-title').innerHTML = `我收到的（还有<span style="color: #007bff;"> ${waitingCount} </span>条申请等待处理）`;
 }
 
-const socket = new WebSocket("ws://47.115.226.7:8080/websocket/" + localStorage.getItem("userId"));
+const socket = new WebSocket("ws://localhost:8080/websocket/" + localStorage.getItem("userId"));
 
 socket.onopen = function (event) {
     console.log("WebSocket connection established.");
